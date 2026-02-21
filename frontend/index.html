@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BitEstate - Real Estate on Bitcoin</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts for Modern Typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Navigation Bar -->
+      <nav class="navbar">
+        <div class="logo">
+          <span class="logo-icon">🏠</span>
+          <span class="logo-text">BitEstate</span>
+        </div>
+        <div class="nav-links">
+          <a href="#" class="active">Discover</a>
+          <a href="#">My Properties</a>
+        </div>
+        <div class="wallet-section">
+          <button id="connectWalletBtn" class="btn primary-btn pulse-animation">
+            Connect Xverse Wallet
+          </button>
+          <div id="walletInfo" class="wallet-info hidden">
+            <span class="balance" id="walletBalance">0.00 BTC</span>
+            <span class="address" id="walletAddress">bc1q...</span>
+            <!-- Simplified avatar placeholder -->
+            <div class="avatar"></div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content Layout -->
+      <main class="main-content">
+        <!-- Header Section -->
+        <header class="page-header">
+          <div class="hero-text">
+            <h1>
+              Real Estate, <span class="highlight">Secured by Bitcoin.</span>
+            </h1>
+            <p>
+              Discover, buy, and trade premium real estate natively on the
+              Bitcoin blockchain using Midl infrastructure.
+            </p>
+          </div>
+
+          <!-- System Action Notification Toast -->
+          <div id="notificationToast" class="notification hidden">
+            <div class="toast-content">
+              <span class="icon">✅</span>
+              <div class="text">
+                <h4>Transaction Successful</h4>
+                <p id="toastMessage">
+                  You have successfully purchased a property.
+                </p>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Properties Grid -->
+        <section class="properties-section">
+          <div class="section-header">
+            <h2>Available Properties</h2>
+            <div class="filters">
+              <button class="filter-btn active">All</button>
+              <button class="filter-btn">Houses</button>
+              <button class="filter-btn">Apartments</button>
+            </div>
+          </div>
+
+          <div class="properties-grid" id="propertiesGrid">
+            <!-- Property Cards will be injected by app.js -->
+            <div class="loading-state">
+              <div class="spinner"></div>
+              <p>Loading properties from blockchain...</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Transaction Modal Output -->
+      <div id="txModal" class="modal-overlay hidden">
+        <div class="modal glass-panel">
+          <div class="modal-header">
+            <h3>Sign Transaction</h3>
+            <button id="closeModalBtn" class="close-btn">×</button>
+          </div>
+          <div class="modal-body">
+            <div class="tx-details">
+              <div class="detail-row">
+                <span>Action</span>
+                <span class="action-type">Purchase Property</span>
+              </div>
+              <div class="detail-row">
+                <span>Amount</span>
+                <span class="amount" id="modalAmount">0.5 BTC</span>
+              </div>
+              <div class="detail-row">
+                <span>Network Fee</span>
+                <span>~0.0001 BTC</span>
+              </div>
+            </div>
+
+            <div class="processing-state hidden" id="processingState">
+              <div class="spinner"></div>
+              <p>Awaiting blockchain confirmation...</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn secondary-btn" id="cancelTxBtn">Reject</button>
+            <button class="btn primary-btn confirm-btn" id="confirmTxBtn">
+              Confirm Purchase
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="mock-chain.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
