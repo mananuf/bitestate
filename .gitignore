@@ -1,0 +1,5 @@
+frontenda/node_modules
+.DS_Store
+contracts/node_modules/
+frontenda/.next/
+frontenda/.pnpm-store

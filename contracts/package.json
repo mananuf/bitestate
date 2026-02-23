@@ -9,5 +9,16 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "devDependencies": {
+    "@midl/executor": "^3.0.3",
+    "@midl/hardhat-deploy": "^3.0.3",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "ethers": "^6.13.0",
+    "hardhat": "^2.22.15",
+    "hardhat-deploy": "^0.12.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "viem": "npm:@midl/viem@^2.45.0"
+  }
 }
