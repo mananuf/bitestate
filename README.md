@@ -13,7 +13,7 @@ Built for the [Midl VibeHack Hackathon](https://dorahacks.io/hackathon/vibemidl/
 |               |                                                                                                                                        |
 | ------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | **Live Demo** | [bitestate-smoky.vercel.app](https://bitestate-smoky.vercel.app/) _(deployed)_                                                  |
-| **Contract**  | [`0xC2DcED4E47cf45FEEC1b432AeA91ca09Cb830050`](https://blockscout.regtest.midl.xyz/address/0xC2DcED4E47cf45FEEC1b432AeA91ca09Cb830050) |
+| **Contract**  | [`0xC2DcED4E47cf45FEEC1b432AeA91ca09Cb830050`](https://blockscout.staging.midl.xyz/address/0xC2DcED4E47cf45FEEC1b432AeA91ca09Cb830050) |
 | **Deploy Tx** | [`0x5af0454...`](https://blockscout.regtest.midl.xyz/tx/0x5af04549f84ea0ca6410b0b4544b01655ec26966927fe10c0ac3e7b814cb3c27)            |
 | **BTC Tx ID** | `166f4bb25d9912b2924d704e3f82f515b9af6848b6b31632147257dbbc0d65ed`                                                                     |
 | **Network**   | Midl L2 (Regtest)                                                                                                                      |
