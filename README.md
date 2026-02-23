@@ -6,6 +6,8 @@ Built for the [Midl VibeHack Hackathon](https://dorahacks.io/hackathon/vibemidl/
 
 ---
 
+![Bit Estate](bitestate.png)
+
 ## 🎬 Demo
 
 | | |
