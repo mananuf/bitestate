@@ -139,7 +139,9 @@ function ListPropertyModal({
         // Read from txIntentionsRef which is kept in sync via useEffect
         const signedHexes = txIntentionsRef.current
           .map(it => it.signedEvmTransaction)
-          .filter((h): h is string => typeof h === "string" && h.startsWith("0x")) as `0x${string}`[];
+          .filter((h): h is `0x${string}` => 
+    typeof h === "string" && h.startsWith("0x")
+  )
 
         if (signedHexes.length === 0) {
           throw new Error("No signed transactions found. Check wallet signing step.");
@@ -816,7 +818,9 @@ export default function Dashboard() {
         // Read from txIntentionsRef which is kept in sync via useEffect
         const signedHexes = txIntentionsRef.current
           .map(it => it.signedEvmTransaction)
-          .filter((h): h is string => typeof h === "string" && h.startsWith("0x")) as `0x${string}`[];
+            .filter((h): h is `0x${string}` => 
+    typeof h === "string" && h.startsWith("0x")
+  );
 
         if (signedHexes.length === 0) {
           throw new Error("No signed transactions found. Check wallet signing step.");
@@ -1150,8 +1154,6 @@ export default function Dashboard() {
                             </p>
                             <p className="text-xs text-zinc-500 font-mono mt-0.5">
                               {new Date(r.timestamp).toLocaleString()}
-                              {r}
-
                             </p>
                           </div>
                         </div>
