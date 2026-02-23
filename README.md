@@ -10,15 +10,15 @@ Built for the [Midl VibeHack Hackathon](https://dorahacks.io/hackathon/vibemidl/
 
 ## 🎬 Demo
 
-| | |
-|---|---|
-| **Live Demo** | [bitestate.vercel.app](https://bitestate.vercel.app) *(deploy your own)* |
-| **Contract** | [`0xC2DcED4E47cf45FEEC1b432AeA91ca09Cb830050`](https://blockscout.regtest.midl.xyz/address/0xC2DcED4E47cf45FEEC1b432AeA91ca09Cb830050) |
-| **Deploy Tx** | [`0x5af0454...`](https://blockscout.regtest.midl.xyz/tx/0x5af04549f84ea0ca6410b0b4544b01655ec26966927fe10c0ac3e7b814cb3c27) |
-| **BTC Tx ID** | `166f4bb25d9912b2924d704e3f82f515b9af6848b6b31632147257dbbc0d65ed` |
-| **Network** | Midl L2 (Regtest) |
+|               |                                                                                                                                        |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| **Live Demo** | [bitestate-smoky.vercel.app](https://bitestate-smoky.vercel.app/) _(deployed)_                                                  |
+| **Contract**  | [`0xC2DcED4E47cf45FEEC1b432AeA91ca09Cb830050`](https://blockscout.regtest.midl.xyz/address/0xC2DcED4E47cf45FEEC1b432AeA91ca09Cb830050) |
+| **Deploy Tx** | [`0x5af0454...`](https://blockscout.regtest.midl.xyz/tx/0x5af04549f84ea0ca6410b0b4544b01655ec26966927fe10c0ac3e7b814cb3c27)            |
+| **BTC Tx ID** | `166f4bb25d9912b2924d704e3f82f515b9af6848b6b31632147257dbbc0d65ed`                                                                     |
+| **Network**   | Midl L2 (Regtest)                                                                                                                      |
 
-___
+---
 
 ## 🏗️ What Is BitEstate?
 
@@ -208,17 +208,17 @@ frontend/
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Framework | Next.js 15 (App Router) |
-| Styling | Tailwind CSS v3 |
-| Bitcoin Wallet | Xverse via `@midl/connectors` |
-| Midl SDK | `@midl/react`, `@midl/core`, `@midl/executor-react` |
-| EVM Reads | `wagmi` v2 + `viem` (@midl/viem fork) |
-| State | React hooks + TanStack Query |
-| Icons | Lucide React |
-| Animations | Framer Motion |
-| Price Feed | CoinGecko API (BTC/USD) |
+| Layer          | Technology                                          |
+| -------------- | --------------------------------------------------- |
+| Framework      | Next.js 15 (App Router)                             |
+| Styling        | Tailwind CSS v3                                     |
+| Bitcoin Wallet | Xverse via `@midl/connectors`                       |
+| Midl SDK       | `@midl/react`, `@midl/core`, `@midl/executor-react` |
+| EVM Reads      | `wagmi` v2 + `viem` (@midl/viem fork)               |
+| State          | React hooks + TanStack Query                        |
+| Icons          | Lucide React                                        |
+| Animations     | Framer Motion                                       |
+| Price Feed     | CoinGecko API (BTC/USD)                             |
 
 ---
 
@@ -240,21 +240,21 @@ https://mempool.regtest.midl.xyz/tx/166f4bb25d9912b2924d704e3f82f515b9af6848b6b3
 ### Run Contract Reads Locally
 
 ```typescript
-import { createPublicClient, http } from '@midl/viem'
-import { midlRegtest } from '@midl/executor'
+import { createPublicClient, http } from "@midl/viem";
+import { midlRegtest } from "@midl/executor";
 
 const client = createPublicClient({
   chain: midlRegtest,
-  transport: http('https://rpc.staging.midl.xyz')
-})
+  transport: http("https://rpc.staging.midl.xyz"),
+});
 
 // Read property #1
 const prop = await client.readContract({
-  address: '0xC2DcED4E47cf45FEEC1b432AeA91ca09Cb830050',
+  address: "0xC2DcED4E47cf45FEEC1b432AeA91ca09Cb830050",
   abi: BitEstateABI,
-  functionName: 'properties',
-  args: [1n]
-})
+  functionName: "properties",
+  args: [1n],
+});
 ```
 
 ---
@@ -277,14 +277,14 @@ Wagmi's `useWriteContract` injects an EVM provider into `window`, causing a `Can
 
 ## ✅ Judging Criteria Checklist
 
-| Requirement | Status | Details |
-|---|---|---|
-| Proper front-end design (no AI slop) | ✅ | Dark luxury real estate aesthetic, custom animations, orange Bitcoin accent system |
-| Xverse wallet connection | ✅ | Full `@midl/react` + `xverseConnector` integration |
-| User triggers action in UI | ✅ | Buy Property + List Property modals with step-by-step flow |
-| Action hits Midl RPC/SDK → Solidity | ✅ | `useAddTxIntention` → `useFinalizeBTCTransaction` → `useSignIntention` → broadcast |
-| Tx appears on-chain with hash | ✅ | Real tx hash with blockscout explorer link shown on success |
-| UI updates to reflect new state | ✅ | `useReadContracts` refetch after each tx; portfolio + activity log update live |
+| Requirement                          | Status | Details                                                                            |
+| ------------------------------------ | ------ | ---------------------------------------------------------------------------------- |
+| Proper front-end design (no AI slop) | ✅     | Dark luxury real estate aesthetic, custom animations, orange Bitcoin accent system |
+| Xverse wallet connection             | ✅     | Full `@midl/react` + `xverseConnector` integration                                 |
+| User triggers action in UI           | ✅     | Buy Property + List Property modals with step-by-step flow                         |
+| Action hits Midl RPC/SDK → Solidity  | ✅     | `useAddTxIntention` → `useFinalizeBTCTransaction` → `useSignIntention` → broadcast |
+| Tx appears on-chain with hash        | ✅     | Real tx hash with blockscout explorer link shown on success                        |
+| UI updates to reflect new state      | ✅     | `useReadContracts` refetch after each tx; portfolio + activity log update live     |
 
 ---
 
